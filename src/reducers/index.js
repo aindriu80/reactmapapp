@@ -5,9 +5,10 @@ export default function performAction(state = { num: 0 }, action) {
     case INC_NUMBER:
       console.log("Action performed from the reducer");
       console.log(state, action);
-      let num = 0;
+      let num = state.num + 1;
       return { num };
     default:
+      num = 0;
       return state;
   }
 }
