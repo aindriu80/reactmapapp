@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import { incrementNumber } from "../actions";
+import { decrementNumber } from "../actions";
 
 class Number extends Component {
   render() {
@@ -21,6 +22,13 @@ class Number extends Component {
           >
             Increment
           </Button>
+          <Button
+            bsStyle="danger"
+            className="col-sm-offset-1"
+            onClick={() => this.props.decrementNumber(this.props.num)}
+          >
+            Decrement
+          </Button>
         </div>
       </div>
     );
@@ -35,7 +43,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ incrementNumber }, dispatch);
+  return bindActionCreators({ incrementNumber, decrementNumber }, dispatch);
 }
 
 export default connect(
