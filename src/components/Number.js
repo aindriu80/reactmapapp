@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Button } from "react-bootstrap";
 
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
+// import { bindActionCreators } from "redux";
 
 import { incrementNumber } from "../actions";
 import { decrementNumber } from "../actions";
@@ -42,11 +42,11 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ incrementNumber, decrementNumber }, dispatch);
-}
+// function mapDispatchToProps(dispatch) {
+//   return bindActionCreators({ incrementNumber, decrementNumber }, dispatch);
+// }
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  { incrementNumber, decrementNumber }
 )(Number);
